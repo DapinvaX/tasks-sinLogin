@@ -1,0 +1,12 @@
+<mat-toolbar>
+  <div class="container">
+    <a href="/" (click)="navigateToHome($event)" class="logo">
+      <mat-icon>check_circle</mat-icon>
+      <span>TaskApp</span>
+    </a>
+    <div class="spacer"></div>
+    <button mat-icon-button aria-label="Toggle dark theme" (click)="toggleDarkTheme()" class="theme-toggle">
+      <mat-icon>{{ isDarkTheme ? 'wb_sunny' : 'nightlight_round' }}</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

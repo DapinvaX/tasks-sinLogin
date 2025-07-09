@@ -1,0 +1,357 @@
+/* Estilos específicos del componente tarea-card */
+.tarea-card {
+  background: var(--card-background);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15), 0 3px 8px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.tarea-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2), 0 5px 12px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tarea-card.completada {
+  opacity: 0.8;
+  border: none;
+  background: var(--card-background);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15), 0 3px 8px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.tarea-card.completada:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2), 0 5px 12px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.header-view-mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header-edit-mode {
+  width: 100%;
+}
+
+.edit-title-field {
+  width: 100%;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.descripcion {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.fechas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.fecha-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.fecha-item mat-icon {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.card-actions-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.completar-checkbox {
+  font-weight: 500;
+}
+
+[data-theme="dark"] .completar-checkbox {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .completar-checkbox .mat-checkbox-label {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .completar-checkbox * {
+  color: #ffffff !important;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: auto;
+}
+
+.action-button mat-icon {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Chips de estado */
+.completada-chip {
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 600;
+  padding: 0.3em 1.2em;
+  border-radius: 20px;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.completada-chip * {
+  color: #ffffff !important;
+}
+
+.pendiente-chip {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 600;
+  padding: 0.3em 1.2em;
+  border-radius: 20px;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.pendiente-chip * {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .completada-chip {
+  background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(102, 187, 106, 0.4);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+[data-theme="dark"] .completada-chip * {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .pendiente-chip {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.4);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+[data-theme="dark"] .pendiente-chip * {
+  color: #ffffff !important;
+}
+
+/* Estilos para checkboxes */
+.mat-checkbox-frame, .mat-checkbox-background {
+  border-color: var(--text-primary) !important;
+  background: var(--card-background) !important;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+[data-theme="dark"] .mat-checkbox-frame, [data-theme="dark"] .mat-checkbox-background {
+  border-color: #fff !important;
+  background: #2d3748 !important;
+}
+
+.mat-checkbox-checked .mat-checkbox-background, .mat-checkbox-checkmark {
+  background: #1976d2 !important;
+  color: #1976d2 !important;
+  border-color: #1976d2 !important;
+}
+
+[data-theme="dark"] .mat-checkbox-checked .mat-checkbox-background, [data-theme="dark"] .mat-checkbox-checkmark {
+  background: #53c94f !important;
+  color: #53c94f !important;
+  border-color: #53c94f !important;
+}
+
+.mat-checkbox-label {
+  color: var(--text-primary) !important;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .mat-checkbox-label {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .mat-checkbox-inner-container {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .mat-checkbox-label-content {
+  color: #ffffff !important;
+}
+
+/* Estilos específicos para tema oscuro - Mayor contraste */
+[data-theme="dark"] .tarea-card {
+  background: linear-gradient(145deg, #2d3748 0%, #1a202c 100%);
+  border: 2px solid #68737d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .tarea-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border-color: var(--card-border);
+  background: linear-gradient(145deg, #374151 0%, #1f2937 100%);
+}
+
+[data-theme="dark"] .tarea-card.completada {
+  border-color: rgba(76, 175, 80, 0.6);
+  background: linear-gradient(145deg, #2d3748 0%, #1a202c 100%);
+  box-shadow:
+    0 8px 24px rgba(255, 255, 255, 0.08),
+    0 4px 8px rgba(255, 255, 255, 0.04),
+    0 2px 4px rgba(76, 175, 80, 0.1);
+}
+
+[data-theme="dark"] .tarea-card.completada:hover {
+  border-color: rgba(76, 175, 80, 0.8);
+  background: linear-gradient(145deg, #374151 0%, #1f2937 100%);
+  box-shadow:
+    0 16px 40px rgba(255, 255, 255, 0.12),
+    0 8px 16px rgba(255, 255, 255, 0.06),
+    0 4px 8px rgba(76, 175, 80, 0.15);
+}
+
+/* Mejorar contraste de texto en tema oscuro */
+[data-theme="dark"] .descripcion {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .fecha-item {
+  color: #cbd5e0;
+}
+
+/* Botones con mejor contraste en tema oscuro */
+[data-theme="dark"] .action-button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .action-button:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tarea-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .header-view-mode {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .action-buttons {
+    justify-content: stretch;
+  }
+
+  .action-button {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* Animaciones y efectos adicionales */
+.tarea-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, rgba(193, 199, 208, 0.2), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: exclude;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tarea-card:hover::before {
+  opacity: 1;
+}
+
+[data-theme="dark"] .tarea-card::before {
+  background: linear-gradient(45deg, transparent, rgba(104, 115, 125, 0.3), transparent);
+}
+
+/* Modo oscuro - sombras que coinciden exactamente con el botón Nueva Tarea */
+[data-theme="dark"] .tarea-card {
+  box-shadow: 0 6px 16px rgba(255,255,255,0.1), 0 3px 8px rgba(255,255,255,0.05), 0 1px 3px rgba(255,255,255,0.03);
+}
+
+[data-theme="dark"] .tarea-card:hover {
+  box-shadow: 0 10px 24px rgba(255,255,255,0.15), 0 5px 12px rgba(255,255,255,0.1), 0 2px 6px rgba(255,255,255,0.05);
+}
+
+[data-theme="dark"] .tarea-card.completada {
+  box-shadow: 0 6px 16px rgba(255,255,255,0.1), 0 3px 8px rgba(255,255,255,0.05), 0 1px 3px rgba(255,255,255,0.03);
+}
+
+[data-theme="dark"] .tarea-card.completada:hover {
+  box-shadow: 0 10px 24px rgba(255,255,255,0.15), 0 5px 12px rgba(255,255,255,0.1), 0 2px 6px rgba(255,255,255,0.05);
+}

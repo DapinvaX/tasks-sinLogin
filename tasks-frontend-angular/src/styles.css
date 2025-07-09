@@ -1,0 +1,298 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Variables globales para temas claros y oscuros */
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --card-background: #ffffff;
+  --card-border: #c1c7d0;
+  --card-shadow: rgba(0, 0, 0, 0.15);
+  --card-footer-bg: #f8f9fa;
+  --button-text: #1a1a1a;
+  --body-background: #f5f5f5;
+  --main-background: #ffffff;
+}
+
+[data-theme="dark"] {
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --card-background: #2d3748;
+  --card-border: #68737d;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --card-footer-bg: #1a202c;
+  --button-text: #ffffff;
+  --body-background: #0f1419;
+  --main-background: #1a1a2e;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--body-background);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Estilos globales para tema oscuro */
+[data-theme="dark"] {
+  background-color: var(--body-background) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] * {
+  scrollbar-width: thin;
+  scrollbar-color: #4a5568 #2d3748;
+}
+
+[data-theme="dark"] *::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme="dark"] *::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+[data-theme="dark"] *::-webkit-scrollbar-thumb {
+  background-color: #4a5568;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] *::-webkit-scrollbar-thumb:hover {
+  background-color: #68737d;
+}
+
+/* Estilos globales para Material Design en tema oscuro */
+[data-theme="dark"] .mat-mdc-card {
+  background-color: var(--card-background) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .mat-mdc-form-field {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .mat-mdc-form-field-label,
+[data-theme="dark"] .mat-mdc-floating-label {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .mat-mdc-form-field input,
+[data-theme="dark"] .mat-mdc-form-field textarea {
+  color: var(--text-primary) !important;
+  caret-color: var(--text-primary) !important;
+}
+
+/* Outlines y bordes de los campos */
+[data-theme="dark"] .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
+  color: var(--card-border) !important;
+  border-color: var(--card-border) !important;
+}
+
+[data-theme="dark"] .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline-thick {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+[data-theme="dark"] .mat-mdc-form-field.mat-focused .mat-mdc-form-field-outline-thick {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+[data-theme="dark"] .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: #ffffff !important;
+}
+
+/* Hint y error text */
+[data-theme="dark"] .mat-mdc-form-field .mat-mdc-form-field-hint {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .mat-mdc-form-field .mat-mdc-form-field-error {
+  color: #f44336 !important;
+}
+
+/* Iconos en campos de formulario */
+[data-theme="dark"] .mat-mdc-form-field mat-icon,
+[data-theme="dark"] .mat-mdc-form-field .mat-icon {
+  color: var(--text-secondary) !important;
+}
+
+/* Datepicker específico */
+[data-theme="dark"] .mat-datepicker-toggle mat-icon {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .mat-mdc-button {
+  color: var(--button-text) !important;
+}
+
+[data-theme="dark"] .mat-mdc-outlined-button {
+  border-color: var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .mat-mdc-outlined-button:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+[data-theme="dark"] .mat-mdc-icon-button {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .mat-mdc-progress-spinner circle {
+  stroke: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .mat-mdc-snack-bar-container {
+  background-color: var(--card-background) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Títulos y textos globales */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] div {
+  color: var(--text-primary);
+}
+
+/* Estilos globales para navbar en tema oscuro */
+[data-theme="dark"] mat-toolbar,
+[data-theme="dark"] .mat-toolbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] app-navbar mat-toolbar,
+[data-theme="dark"] app-navbar .mat-toolbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%) !important;
+  color: #ffffff !important;
+}
+
+/* Iconos del navbar en tema oscuro */
+[data-theme="dark"] mat-toolbar mat-icon,
+[data-theme="dark"] mat-toolbar .mat-icon,
+[data-theme="dark"] app-navbar mat-icon,
+[data-theme="dark"] app-navbar .mat-icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Botones Material en tema oscuro */
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary:hover {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary mat-icon,
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary .mat-icon {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary:hover mat-icon,
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary:hover .mat-icon {
+  color: #000000 !important;
+}
+
+/* Botones con color="primary" específicamente */
+[data-theme="dark"] button[color="primary"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] button[color="primary"]:hover {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] button[color="primary"] mat-icon,
+[data-theme="dark"] button[color="primary"] .mat-icon {
+  color: #000000 !important;
+}
+
+/* Asegurar que el texto de los botones sea negro en modo oscuro */
+[data-theme="dark"] button[color="primary"] span,
+[data-theme="dark"] button[color="primary"] .mdc-button__label,
+[data-theme="dark"] button[color="primary"] .mat-button-wrapper {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] button[color="primary"]:hover span,
+[data-theme="dark"] button[color="primary"]:hover .mdc-button__label,
+[data-theme="dark"] button[color="primary"]:hover .mat-button-wrapper {
+  color: #000000 !important;
+}
+
+/* Botones Material raised con más especificidad */
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary span,
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary .mdc-button__label,
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary .mat-button-wrapper {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary:hover span,
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary:hover .mdc-button__label,
+[data-theme="dark"] .mat-mdc-raised-button.mat-primary:hover .mat-button-wrapper {
+  color: #000000 !important;
+}
+
+/* ===== SOMBRAS MEJORADAS PARA BOTONES ===== */
+
+/* Botones Material Design - Sombras en modo claro */
+.mat-mdc-raised-button {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15), 0 3px 8px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08) !important;
+  transition: all 0.3s ease;
+}
+
+.mat-mdc-raised-button:hover {
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2), 0 5px 12px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.1) !important;
+  transform: translateY(-2px);
+}
+
+.mat-mdc-button:not(.mat-mdc-raised-button) {
+  transition: all 0.3s ease;
+}
+
+.mat-mdc-button:not(.mat-mdc-raised-button):hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.08) !important;
+  transform: translateY(-1px);
+}
+
+/* Botones Material Design - Sombras en tema oscuro */
+[data-theme="dark"] .mat-mdc-raised-button {
+  box-shadow:
+    0 6px 16px rgba(255,255,255,0.1),
+    0 3px 8px rgba(255,255,255,0.05),
+    0 1px 3px rgba(255,255,255,0.03) !important;
+}
+
+[data-theme="dark"] .mat-mdc-raised-button:hover {
+  box-shadow:
+    0 10px 24px rgba(255,255,255,0.15),
+    0 5px 12px rgba(255,255,255,0.1),
+    0 2px 6px rgba(255,255,255,0.05) !important;
+}
+
+[data-theme="dark"] .mat-mdc-button:not(.mat-mdc-raised-button):hover {
+  box-shadow:
+    0 4px 12px rgba(255,255,255,0.08),
+    0 2px 6px rgba(255,255,255,0.05) !important;
+}

@@ -1,0 +1,155 @@
+mat-toolbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+  color: #000000;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  border-image: linear-gradient(90deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.05) 100%) 1;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.theme-toggle {
+  margin-left: 16px;
+  transition: all 0.3s ease;
+  color: #000000;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #333333;
+}
+
+.theme-toggle mat-icon {
+  color: #000000;
+}
+
+/* Efecto de rotación al cambiar el tema */
+.theme-toggle mat-icon {
+  transition: transform 0.5s ease;
+}
+
+.theme-toggle:hover mat-icon {
+  transform: rotate(30deg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #333333;
+  transform: scale(1.05);
+}
+
+.logo mat-icon {
+  font-size: 1.2em;
+  height: auto;
+  width: auto;
+  color: #000000;
+}
+
+/* Tema oscuro */
+[data-theme="dark"] mat-toolbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15) !important;
+  border-image: linear-gradient(90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.05) 100%) 1 !important;
+}
+
+[data-theme="dark"] .logo {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .logo:hover {
+  color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .logo mat-icon {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .logo mat-icon svg {
+  fill: #ffffff !important;
+}
+
+[data-theme="dark"] .logo .mat-icon {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .theme-toggle {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .theme-toggle mat-icon {
+  color: #ffffff !important;
+}
+
+/* Estilos adicionales para forzar tema oscuro en Material Toolbar */
+[data-theme="dark"] .mat-toolbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .mat-mdc-button.mat-mdc-icon-button {
+  color: #ffffff !important;
+}
+
+/* Forzar tema oscuro en toda la aplicación */
+[data-theme="dark"] app-navbar mat-toolbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%) !important;
+  color: #ffffff !important;
+}
+
+/* Asegurar que todos los iconos del navbar sean blancos en tema oscuro */
+[data-theme="dark"] app-navbar .logo mat-icon,
+[data-theme="dark"] app-navbar .logo .mat-icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+[data-theme="dark"] app-navbar mat-icon,
+[data-theme="dark"] app-navbar .mat-icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+[data-theme="dark"] mat-toolbar mat-icon,
+[data-theme="dark"] mat-toolbar .mat-icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}

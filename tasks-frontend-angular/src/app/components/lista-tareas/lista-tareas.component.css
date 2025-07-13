@@ -43,9 +43,39 @@
 
 .tareas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   padding: 1rem 0;
+}
+
+/* Responsive breakpoints para diferentes números de columnas */
+@media (min-width: 1600px) {
+  .tareas-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .tareas-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .tareas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .tareas-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .empty-state {

@@ -5,15 +5,6 @@
     <!-- Modo visualización -->
     <div *ngIf="!isEditing" class="header-view-mode">
       <mat-card-title>{{ tarea.titulo }}</mat-card-title>
-      <div class="card-actions">
-        <mat-chip
-          [color]="tarea.completada ? 'accent' : 'primary'"
-          [class.completada-chip]="tarea.completada"
-          [class.pendiente-chip]="!tarea.completada">
-          <mat-icon>{{ tarea.completada ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
-          {{ tarea.completada ? 'Completada' : 'Pendiente' }}
-        </mat-chip>
-      </div>
     </div>
 
     <!-- Modo edición -->
@@ -32,10 +23,22 @@
   </mat-card-header>
 
   <mat-card-content>
+    <!-- Chip de estado debajo del título (solo en modo visualización) -->
+    <div *ngIf="!isEditing" class="estado-container">
+      <mat-chip
+        [color]="tarea.completada ? 'accent' : 'primary'"
+        [class.completada-chip]="tarea.completada"
+        [class.pendiente-chip]="!tarea.completada">
+        <mat-icon>{{ tarea.completada ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
+        {{ tarea.completada ? 'Completada' : 'Pendiente' }}
+      </mat-chip>
+    </div>
+
     <!-- Modo visualización -->
     <div *ngIf="!isEditing">
       <p *ngIf="tarea.descripcion" class="descripcion">{{ tarea.descripcion }}</p>
 
+      <!-- Contenedor de fechas - siempre visible si hay al menos una fecha -->
       <div class="fechas" *ngIf="tarea.fecha_creacion || tarea.fecha_fin">
         <div *ngIf="tarea.fecha_creacion" class="fecha-item">
           <mat-icon>calendar_today</mat-icon>
@@ -79,60 +82,63 @@
   </mat-card-content>
 
   <mat-card-actions align="end" class="card-actions-footer">
-    <!-- Checkbox para completar tarea -->
-    <div class="checkbox-container">
-      <mat-checkbox
-        [checked]="tarea.completada"
-        (change)="onToggleEstado()"
-        [disabled]="isEditing"
-        class="completar-checkbox">
-        {{ tarea.completada ? 'Completada' : 'Marcar como completada' }}
-      </mat-checkbox>
-    </div>
+    <!-- Checkbox y botones en la misma línea -->
+    <div class="footer-content">
+      <!-- Checkbox para completar tarea -->
+      <div class="checkbox-container">
+        <mat-checkbox
+          [checked]="tarea.completada"
+          (change)="onToggleEstado()"
+          [disabled]="isEditing"
+          class="completar-checkbox">
+          Marcar como completada
+        </mat-checkbox>
+      </div>
 
-    <!-- Botones de acción -->
-    <div class="action-buttons">
-      <!-- Modo visualización -->
-      <ng-container *ngIf="!isEditing">
-        <button
-          mat-button
-          color="primary"
-          (click)="onEditar()"
-          class="action-button">
-          <mat-icon>edit</mat-icon>
-          Editar
-        </button>
+      <!-- Botones de acción -->
+      <div class="action-buttons">
+        <!-- Modo visualización -->
+        <ng-container *ngIf="!isEditing">
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="onEditar()"
+            class="action-button edit-button"
+            matTooltip="Editar tarea">
+            <mat-icon>edit</mat-icon>
+          </button>
 
-        <button
-          mat-button
-          color="warn"
-          (click)="onEliminar()"
-          class="action-button">
-          <mat-icon>delete</mat-icon>
-          Eliminar
-        </button>
-      </ng-container>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="onEliminar()"
+            class="action-button delete-button"
+            matTooltip="Eliminar tarea">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </ng-container>
 
-      <!-- Modo edición -->
-      <ng-container *ngIf="isEditing">
-        <button
-          mat-button
-          (click)="onCancelarEdicion()"
-          class="action-button">
-          <mat-icon>cancel</mat-icon>
-          Cancelar
-        </button>
+        <!-- Modo edición -->
+        <ng-container *ngIf="isEditing">
+          <button
+            mat-icon-button
+            (click)="onCancelarEdicion()"
+            class="action-button cancel-button"
+            matTooltip="Cancelar edición">
+            <mat-icon>cancel</mat-icon>
+          </button>
 
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="onGuardarCambios()"
-          [disabled]="editForm?.invalid"
-          class="action-button">
-          <mat-icon>save</mat-icon>
-          Guardar
-        </button>
-      </ng-container>
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="onGuardarCambios()"
+            [disabled]="editForm?.invalid"
+            class="action-button save-button"
+            matTooltip="Guardar cambios">
+            <mat-icon>save</mat-icon>
+          </button>
+        </ng-container>
+      </div>
     </div>
   </mat-card-actions>
 </mat-card>

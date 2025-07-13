@@ -3,7 +3,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4000/tareas',
+  apiUrl: 'http://localhost:5000/tareas',
   apiUrlProduction: 'https://tasks-backend-nestjs-dapinvax.fly.dev/tareas',
   currentEnvironment: 'development'
 };

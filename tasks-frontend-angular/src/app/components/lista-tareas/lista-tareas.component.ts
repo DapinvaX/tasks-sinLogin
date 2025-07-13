@@ -107,4 +107,8 @@ export class ListaTareasComponent implements OnInit {
   isEditing(tareaId: number | undefined): boolean {
     return this.editingTareaId === tareaId;
   }
+
+  trackByTarea(index: number, tarea: Tarea): number {
+    return tarea.id || index;
+  }
 }

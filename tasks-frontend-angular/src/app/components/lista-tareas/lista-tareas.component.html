@@ -24,9 +24,9 @@
       <p>¡Crea tu primera tarea para comenzar!</p>
     </div>
 
-    <!-- Tarjetas de tareas -->
+    <!-- Grid de tareas responsive -->
     <app-tarea-card
-      *ngFor="let tarea of tareas"
+      *ngFor="let tarea of tareas; trackBy: trackByTarea"
       [tarea]="tarea"
       [isEditing]="isEditing(tarea.id)"
       (toggleEstado)="onToggleEstado($event)"
